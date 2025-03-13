@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS public.users (
     token_identifier text NOT NULL UNIQUE,
     subscription text,
     credits text,
+    approval_status text DEFAULT 'pending',
     created_at timestamp with time zone DEFAULT timezone('utc'::text, now()) NOT NULL,
     updated_at timestamp with time zone DEFAULT timezone('utc'::text, now())
 );

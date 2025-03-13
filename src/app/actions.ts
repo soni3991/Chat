@@ -51,6 +51,7 @@ export const signUpAction = async (formData: FormData) => {
           email: email,
           user_id: user.id,
           token_identifier: user.id,
+          approval_status: 'pending',
           created_at: new Date().toISOString()
         });
 
@@ -65,7 +66,7 @@ export const signUpAction = async (formData: FormData) => {
   return encodedRedirect(
     "success",
     "/sign-up",
-    "Thanks for signing up! Please check your email for a verification link.",
+    "Thanks for signing up! Please check your email for a verification link. An administrator will need to approve your account before you can access the dashboard.",
   );
 };
 
